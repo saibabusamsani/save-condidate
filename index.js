@@ -242,7 +242,8 @@ function displayCards(data) {
         cardBottom.append(btmLeft,btmRgt);
 
 
-        const viewApplication=document.createElement("button");
+        const viewApplication=document.createElement("a");
+        viewApplication.setAttribute("href","https://candidate-profile-iota.vercel.app/")
         viewApplication.textContent="View Application";
         viewApplication.classList.add("view-btn");
 
