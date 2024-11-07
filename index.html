@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="index.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <div class="header">
+            <h2>Applications for Digital Marketing internship</h1>
+            <div>
+                <input placeholder="enter name" class="form-control" onkeyup="searchNames()" id="input-name"></input>
+            </div>
+
+        </div>
+
+        <!-- body container -->
+
+        <div class="body">
+            <div class="block1">
+                <div class="b1">
+                    <div class="acc">
+                        <h3 class="access">Access database</h3>
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                   <p>453</p>
+                </div>
+
+                <div class="b12">
+                    <div class="b121">
+                        <button class="btn">Applications received</button>
+                        <button  class="hits" >6</button>  
+                    </div>
+                    <div class="b121">
+                        <button class="btn">Shortlisted</button>
+                        <button class="hits">0</button>  
+                    </div>
+                    <div class="b121">
+                        <button class="btn">Hired</button>
+                        <button class="hits">0</button>  
+                    </div>
+                    <div class="b121">
+                        <button class="btn">Not intersted</button>
+                        <button class="hits">0</button>  
+                    </div>
+
+              </div>
+              <div class="b13">
+                <div class="b121">
+                   <button class="btn">Assigments</button>
+                   <button class="hits">343</button>  
+               </div>
+               <div class="b121">
+                   <button class="btn">Interviews</button>
+                   <button class="hits">0</button>  
+               </div>
+              <div class="chat">
+                <h5 style="color: gray;font-size: 17px;">Chat messages</h5>
+                <i class="fa-solid fa-question q-icon"></i>
+
+              </div>
+
+             
+                
+               </div>
+               <div class="b14">
+                <div class="b141">
+                    <i class="fa-solid fa-headphones"></i>
+                   <p>Need Help ?</p>
+              </div>
+
+      </div>
+
+            </div>
+            <div class="block2">
+
+                <div class="top">
+                    <i class="fas fa-info-circle circleOutline icon"></i>
+                    <p>90% employers find their desired candidates within 3 days using Access Database! Our AI-powered recommendation engine curates upto 500 relevant profiles for your listing so that you can invite most suitable candidates. </p>
+                </div>
+                <h4>Showing 8 results out of 8 application</h3>
+                <div class="bottom">
+
+                    <div  id="cards-container">
+
+    
+                    </div>
+                </div>
+
+            </div>
+            <div class="block3 ps-4 mt-3">
+                <h5>Filters</h5>
+                <!-- locations -->
+                <div >
+                    <h6 >Applicant location</h6>
+                    <input type="text" id="filterInput" class="form-control mb-3" placeholder="Eg. Hyderabad">
+                </div>
+                <!-- skills -->
+                <div >
+                    <h6 >Skills</h6>
+    
+                    <input type="text" id="filterInput" class="form-control mb-3" placeholder="Eg. Java">
+                </div>
+                <div >
+                    <h6 >Acdemic background </h6>
+    
+                    <input type="text" id="filterInput" class="form-control mb-3" placeholder="Eg. Btech">
+                </div>
+                <div >
+                    <h6 >Graduation year </h6>
+                    <input type="text" id="filterInput" class="form-control mb-3" placeholder="Eg. 2024">
+                </div>
+                <!-- Gender -->
+                <div >
+                    <h6 >Gender </h6>
+                    <div class="d-flex gap-3">
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Male
+                            </label>
+                          </div>
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Female
+                            </label>
+                          </div>
+
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Other
+                            </label>
+                          </div>
+
+                          
+                   
+                </div>
+        
+
+                 </div>
+
+                 <!-- Experience -->
+
+        
+                    <select class="custom-select mt-3">
+                      <option selected>Enter your experience</option>
+                      <option value="1 ">1 yrs</option>
+                      <option value="2">2 yrs</option>
+                      <option value="3">3 yrs</option>
+                    </select>
+
+                    <select class="custom-select mt-3">
+                        <option selected>Enter percentage</option>
+                        <option value="1 ">50%</option>
+                        <option value="2">60%</option>
+                        <option value="3">70% ></option>
+                      </select>
+
+                      <div class="d-flex gap-4 mt-4 ms-4 ">
+                        <button type="button" class="btn btn-outline-primary">Clear</button>
+                        <button type="button" class="btn btn-primary">Show</button>
+                      </div>
+            
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+   
+
+
+</body>
+</html>
