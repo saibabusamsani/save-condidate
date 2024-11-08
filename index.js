@@ -213,17 +213,42 @@ function displayCards(data) {
 
         cmt.addEventListener("click",()=>{
            
-               const cmtCotainer=document.createElement("div");
-               cmtCotainer.classList.add("cmt-container")
-               leftBLock.append(cmtCotainer);
+             const isPresent= document.querySelector(".cmt-container");
+                if(!isPresent)
+                {
+                    const cmtCotainer=document.createElement("div");
+                    cmtCotainer.classList.add("cmt-container")
+                    leftBLock.append(cmtCotainer);
+     
+                    const div1=document.createElement("div");
+                    const div2=document.createElement("div");
+                    const div3=document.createElement("div");
+     
+                 //    div1 
+                 const title=document.createElement("b");
+                 title.textContent="Comments";
+                 const icon=document.createElement("i");
+                 icon.classList.add("fa-solid" ,"fa-xmark")
+     
+                 div1.append(title,icon)
+                 div1.classList.add("d-flex","justify-content-between")
+     
+     
+                  
+                  
+                  
+                  
+                 icon.addEventListener("click",()=>cmtCotainer.remove())
+     
+     
+                  cmtCotainer.append(div1,div2,div3);
+                  cmtCotainer.append(close)
+     
 
-             const close=  document.createElement("button");
-             close.textContent="close";
-             close.addEventListener("click",()=>cmtCotainer.remove())
-
-             cmtCotainer.append(close)
-
-
+                }
+                else{
+                    isPresent.remove();
+                }
         })
 
 
