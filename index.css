@@ -126,7 +126,7 @@
 }
 .left-block{
     width: 60%;
-    height: 300px;
+    height: auto;
     /* background-color: blue; */
 }
 .right-block{
@@ -442,3 +442,35 @@
     outline: none;
     
   }
+
+
+  .steps{
+    height: 170px;
+    width: 230px;
+    background-color: white;
+    position: absolute;
+    top: 230px;
+    right: 10%;
+    border-radius: 5px;
+
+    box-shadow: rgba(0, 0, 0, 0.26) 1px 15px 29px, rgba(0, 0, 0, 0.23) 1px 11px 11px;
+    padding: 1vw;
+    
+
+}
+.icon-div:hover{
+    color: rgb(53, 137, 239);
+    cursor: pointer;
+}
+  
+.cmt-container{
+    height: 150px;
+    width: 160%;
+    background-color: rgb(239, 251, 255);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-family: "inter";
+    border-radius: 10px;
+}

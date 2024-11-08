@@ -88,6 +88,7 @@ function displayCards(data) {
         const rightBLock =document.createElement("div");
 
         leftBLock.classList.add("left-block");
+        leftBLock.setAttribute("id","left-block")
         rightBLock.classList.add("right-block");
 
         cardBody.append(leftBLock,rightBLock);
@@ -165,6 +166,7 @@ function displayCards(data) {
 
         ];
        const personData= document.createElement("div");
+       personData.setAttribute("id","person-data")
        personData.classList.add("person-data");
         personInfo.forEach((data)=>{
             const set=document.createElement("div");
@@ -183,6 +185,8 @@ function displayCards(data) {
         
         
         leftBLock.append(nameBlock,iconsList,personData)
+
+        
 
         //  right block
 
@@ -205,8 +209,29 @@ function displayCards(data) {
         callBtn.textContent="Call candidate";
         verifyBtn.textContent="verified phone and email";
 
-        const cmt=document.createElement("button");
+        const cmt=document.createElement("button");  // click -> cmt
+
+        cmt.addEventListener("click",()=>{
+           
+               const cmtCotainer=document.createElement("div");
+               cmtCotainer.classList.add("cmt-container")
+               leftBLock.append(cmtCotainer);
+
+             const close=  document.createElement("button");
+             close.textContent="close";
+             close.addEventListener("click",()=>cmtCotainer.remove())
+
+             cmtCotainer.append(close)
+
+
+        })
+
+
+
+
+
         cmt.textContent="comment";
+        cmt.setAttribute("onclick","addComment()")
         cmt.classList.add("comment")
 //  save container 
         const saveBox=document.createElement("div");
@@ -264,7 +289,7 @@ function displayCards(data) {
 
        const intrst= document.createElement("button");
        const shortList= document.createElement("button");
-       const nextStep=document.createElement("div");
+       const nextStep=document.createElement("div");// click
 
        nextStep.classList.add("next-step")
 
@@ -275,7 +300,11 @@ function displayCards(data) {
        arrowIcon.classList.add("fa-solid","fa-angle-down");
 
        nextStep.append(np1,arrowIcon)
-       btmRgt.append(intrst,shortList,nextStep);
+
+       const nextStepBox=document.createElement("div");
+       nextStepBox.setAttribute("id","next-step-container")  // parernt -> nextStep box     click=nextStep
+       nextStepBox.append(nextStep);
+       btmRgt.append(intrst,shortList,nextStepBox);
 
 
         intrst.textContent="Not intersted";
@@ -284,6 +313,62 @@ function displayCards(data) {
         intrst.classList.add("intrst");
         shortList.classList.add("shortlist")
 
+        // click event
+
+        nextStep.addEventListener("click",()=>{
+
+            let steps = document.querySelector(".steps");
+            if(!steps)
+            {
+
+                    steps = document.createElement("div");
+                nextStepBox.prepend(steps); // Prepend steps only if it doesn't exist
+                steps.classList.add("steps");
+                console.log("sucess")
+
+                const data = [
+                    {
+                        item: "Send Assignment",
+                        icon: ["fa-regular", "fa-pen-to-square"]
+                    },
+                    {
+                        item: "Schedule interview",
+                        icon: ["fa-regular", "fa-calendar"]
+                    },
+                    {
+                        item: "Start chart",
+                        icon: ["fa-regular", "fa-note-sticky"]
+                    },
+                    {
+                        item: "Hire",
+                        icon: ["fa-regular", "fa-user"]
+                    }
+                ];
+
+                data.forEach((iconInfo) => {
+                    const iconDiv = document.createElement("div");
+                    steps.append(iconDiv);
+
+                    iconDiv.classList.add("d-flex", "gap-2", "icon-div");
+
+                    const icon = document.createElement("i");
+                    icon.classList.add(...iconInfo.icon);
+
+                    const title = document.createElement("p");
+                    title.textContent = iconInfo.item;
+                    title.style.fontSize = "13px";
+                    title.style.fontFamily = "Inter";
+
+                    iconDiv.append(icon, title);
+                });
+            }
+            else{
+                steps.remove();
+            }
+        })
+
+        
+   
 
         
 
@@ -304,6 +389,10 @@ function searchNames() {
 
 // Example of attaching search function to an input event
 document.getElementById("input-name").addEventListener("input", searchNames);
+
+
+
+
 
 
 
