@@ -214,15 +214,20 @@ function displayCards(data) {
         cmt.addEventListener("click",()=>{
            
              const isPresent= document.querySelector(".cmt-container");
-                if(!isPresent)
+             if(!isPresent)
                 {
+                    
                     const cmtCotainer=document.createElement("div");
                     cmtCotainer.classList.add("cmt-container")
                     leftBLock.append(cmtCotainer);
      
                     const div1=document.createElement("div");
                     const div2=document.createElement("div");
-                    const div3=document.createElement("div");
+                    const div3=document.createElement("button");
+
+                    
+                cmtCotainer.append(div1,div2,div3);
+            
      
                  //    div1 
                  const title=document.createElement("b");
@@ -232,7 +237,49 @@ function displayCards(data) {
      
                  div1.append(title,icon)
                  div1.classList.add("d-flex","justify-content-between")
+
+                //  div2 
+
+                 const profileIcn=document.createElement("i");
+
+                 profileIcn.classList.add("fa-solid","fa-user","profile-cmt-icon");
+
+                 const text=document.createElement("textarea");
+                 text.setAttribute("type","text");
+                 text.setAttribute("placeholder","enter .");
+                 text.classList.add("text")
+
+
+                 div2.classList.add("d-flex","gap-3")
+
+                 const div21=document.createElement("div");
+
+            
+                    const tag=document.createElement("p");
+                    tag.textContent="Suggested tags"
+
+                  const allTags= document.createElement("div");
+
+                  const allTagsInfo=["Expected salary","Current salary","Notice period","Relavent experience","Willing to relocate"];
+
+                  allTagsInfo.forEach((i)=>{
+                   const p= document.createElement("p");
+                   p.classList.add("tag")
+                   p.textContent=i;
+                    allTags.append(p)
+                  })
+
+
+                  allTags.classList.add("d-flex","gap-3")
+
+                div21.append(text,tag,allTags);
+                 div2.append(profileIcn,div21);
      
+
+                //   div3 btn
+
+                div3.classList.add("btn","btn-secondary","btn-lg");
+                div3.textContent="add"
      
                   
                   
@@ -241,8 +288,6 @@ function displayCards(data) {
                  icon.addEventListener("click",()=>cmtCotainer.remove())
      
      
-                  cmtCotainer.append(div1,div2,div3);
-                  cmtCotainer.append(close)
      
 
                 }
@@ -256,7 +301,7 @@ function displayCards(data) {
 
 
         cmt.textContent="comment";
-        cmt.setAttribute("onclick","addComment()")
+       
         cmt.classList.add("comment")
 //  save container 
         const saveBox=document.createElement("div");

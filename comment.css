@@ -1,0 +1,40 @@
+.cmt-container{
+    height: auto;
+    width: 160%;
+    background-color: rgb(239, 251, 255);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-family: "inter";
+    border-radius: 10px;
+}
+.text{
+    width: 100%;
+  outline: none;
+  border: none;
+  height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+.profile-cmt-icon{
+    font-size: 30px;
+    color: rgb(132, 131, 131);
+}
+.cmt-container p{
+    font-size: 12px;
+}
+.cmt-container .tag{
+    width: auto;
+  font-size: 12px;
+  padding: 5px;
+  border: 1px dotted black;
+  border-radius: 5px;
+  background-color: rgb(195, 234, 255);
+
+}
+.cmt-container button{
+    font-size: 15px;
+    width: 100px;
+}
