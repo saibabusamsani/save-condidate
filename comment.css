@@ -27,10 +27,11 @@
 }
 .cmt-container .tag{
     width: auto;
-  font-size: 12px;
+  font-size: 10px;
   padding: 5px;
   border: 1px dotted black;
   border-radius: 5px;
+  color: black;
   background-color: rgb(195, 234, 255);
 
 }
