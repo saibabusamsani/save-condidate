@@ -100,7 +100,7 @@
                 </div>
 
             </div>
-            <div class="block3 ps-4 mt-3 d-flex flex-column gap-2">
+            <div class="block3 ps-4 mt-3 d-flex flex-column gap-3">
                 <h5>Filters</h5>
                 <!-- locations -->
                 <div >
@@ -115,6 +115,19 @@
                     </div>
                 
                 </div>
+
+                <!-- countries -->
+                <div>
+                    <h6>Applicant country</h6>
+                    <div class="input-container">
+                        <div class="selected-items" id="selectedCountryItems">
+                            <input type="text" class="input-field" id="countryInput" placeholder="Eg. United States" oninput="filterCountryOptions()" onkeydown="handleCountryKeyNavigation(event)" onfocus="showCountryDropdown()">
+                            <button class="clear-btn" id="countryClearBtn" onclick="clearSelectedCountryItems()">Clear All</button>
+                        </div>
+                        <div class="dropdown-options" id="countryDropdownOptions"></div>
+                    </div>
+
+                </div>
                 <!-- skills -->
                 <div >
                     <h6 >Skills</h6>
@@ -128,6 +141,7 @@
                     </div>
                 </div>
 
+
                 <!-- academic background -->
                 <div >
                     <h6 >Acdemic background </h6>
@@ -139,6 +153,22 @@
                         </div>
                      <div class="dropdown-options" id="educationDropdownOptions"></div>
                    </div>
+                </div>
+                <!-- current company -->
+                <div>
+                    <h6>Current Company</h6>
+                    <div class="selected-items">
+
+                        <input  class ="input-field" placeholder="Eg. Appit ">
+                    </div>
+                </div>
+
+                <div>
+                    <h6>Applicant salary</h6>
+                    <div class="selected-items">
+
+                        <input  class ="input-field" placeholder="Eg. 250000 ">
+                    </div>
                 </div>
 
                 <!-- graduation -->
@@ -216,6 +246,7 @@
     <script src="./filters//skill.js"></script>
     <script src="./filters//background.js"></script>
     <script src="./filters//graduation.js"></script>
+    <script src="./filters//country.js"></script>
    
 
 

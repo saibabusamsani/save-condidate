@@ -9,11 +9,6 @@ let highlightedIndex = -1;
 
 
 
-
-
-
-
-
 // List of location options
 const locations = [
   "New York", "Los Angeles", "Chicago", "Hyderabad","Mumbai"

@@ -38,14 +38,35 @@
     
     padding: 1vw;
 }
-.block3{
-    width:20%;
+.block3 {
+    width: 20%;
     height: 650px;
-    
     border-left: 1px solid rgb(218, 217, 217);
     position: sticky;
     top: 10px;
+    overflow-y: scroll;
+    padding-right: 10px;
+    overflow-x: hidden;
 }
+
+.block3::-webkit-scrollbar {
+    width: 2px;
+}
+
+.block3::-webkit-scrollbar-thumb {
+    background-color:rgb(209, 209, 209);
+    border-radius: 10px;
+}
+
+.block3::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.block3::-webkit-scrollbar-thumb:hover {
+    background-color: #0056b3;
+}
+
 .block2 .top{
     background-color: #e6ebf0;
   padding: 10px;
@@ -433,7 +454,7 @@
     border-radius: 5px;
     padding: 10px;
     font-size: 1rem;
-    width: 280px;
+    width: 270px;
     font-family: "inter";
   }
 
