@@ -1,5 +1,7 @@
 // Initial data
-const toGetAllData = [
+
+
+ const toGetAllData = [
     { id: 1, name: "Saibabu", location: "Hyderabad", education: "Computer Science, (Btech)", graduationYear: "2019-2023", skills: ["Java", "Sql", "Javascript"], experience: "1", Gender: "M" },
     { id: 2, name: "Rohit sharma", location: "Mumbai", education: "accounting and finance, Bachelor of Commerce (B.Com)", graduationYear: "2020-2023", skills: ["Javascript"], experience: "4", Gender: "M" },
     { id: 3, name: "Ms dhoni", location: "Chennai", education: "Automotive, Master of Technology (M.Tech)", graduationYear: "2019-2021", skills: ["Javascript"], experience: "2", Gender: "M" },
@@ -102,7 +104,8 @@ function displayCards(data) {
 
         const name= document.createElement("label");
         name.setAttribute("for","name");
-        name.textContent="saibabu";
+        name.textContent=person.name;
+        name.style.fontWeight="bold"
         
         const nameBlock=document.createElement("div");
         nameBlock.classList.add("name-block")
@@ -115,7 +118,7 @@ function displayCards(data) {
         
         const iconsList=document.createElement("div");
         iconsList.classList.add("icons-list");
-        const iconClasses=[{icon:"fas fa-shopping-bag",info:"1 yrs 0 m"},{icon:"fa-solid fa-wallet",info:"12.5lacs"},{icon:"fa-solid fa-location-dot",info:"Hyderabad"}];
+        const iconClasses=[{icon:"fas fa-shopping-bag",info:"1 yrs 0 m"},{icon:"fa-solid fa-wallet",info:"12.5lacs"},{icon:"fa-solid fa-location-dot",info:person.location}];
 
         for(let i=0;i<3;i++)
         {
@@ -460,6 +463,9 @@ function searchNames() {
 // Example of attaching search function to an input event
 document.getElementById("input-name").addEventListener("input", searchNames);
 
+
+
+const showBtn=document.getElementById("show-btn");
 
 
 

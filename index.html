@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">  
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="comment.css">
+    <link rel="stylesheet" href="./filters//location.css">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -99,28 +100,59 @@
                 </div>
 
             </div>
-            <div class="block3 ps-4 mt-3">
+            <div class="block3 ps-4 mt-3 d-flex flex-column gap-2">
                 <h5>Filters</h5>
                 <!-- locations -->
                 <div >
                     <h6 >Applicant location</h6>
-                    <input type="text" id="filterInput" class="form-control mb-3" placeholder="Eg. Hyderabad">
+                                    
+                    <div class="input-container">
+                        <div class="selected-items" id="selectedItems" onclick="showDropdown()">
+                        <input type="text" class="input-field" id="locationInput" placeholder="Eg. Hyderabad" oninput="filterOptions()" onkeydown="handleKeyNavigation(event)">
+                        <button class="clear-btn" id="clearBtn" onclick="clearSelectedItems()">Clear All</button>
+                        </div>
+                        <div class="dropdown-options" id="dropdownOptions"></div>
+                    </div>
+                
                 </div>
                 <!-- skills -->
                 <div >
                     <h6 >Skills</h6>
     
-                    <input type="text" id="filterInput" class="form-control mb-3" placeholder="Eg. Java">
+                    <div class="input-container">
+                        <div class="selected-items" id="selectedSkillItems" onclick="showSkillDropdown()">
+                            <input type="text" class="input-field" id="skillInput" placeholder="Eg. Java" oninput="filterSkillOptions()" onkeydown="handleSkillKeyNavigation(event)">
+                            <button class="clear-btn" id="skillClearBtn" onclick="clearSelectedSkillItems()">Clear All</button>
+                        </div>
+                        <div class="dropdown-options" id="skilldropdownOptions"></div>
+                    </div>
                 </div>
+
+                <!-- academic background -->
                 <div >
                     <h6 >Acdemic background </h6>
     
-                    <input type="text" id="filterInput" class="form-control mb-3" placeholder="Eg. Btech">
+                    <div class="input-container">
+                        <div class="selected-items" id="selectedEducationItems" onclick="showEducationDropdown()">
+                            <input type="text" class="input-field" id="educationInput" placeholder="Eg. Btech" oninput="filterEducationOptions()" onkeydown="handleEducationKeyNavigation(event)">
+                            <button class="clear-btn" id="educationClearBtn" onclick="clearSelectedEducationItems()">Clear All</button>
+                        </div>
+                     <div class="dropdown-options" id="educationDropdownOptions"></div>
+                   </div>
                 </div>
+
+                <!-- graduation -->
                 <div >
                     <h6 >Graduation year </h6>
-                    <input type="text" id="filterInput" class="form-control mb-3" placeholder="Eg. 2024">
+                    <div class="input-container">
+                        <div class="selected-items" id="selectedYearItems" onclick="showYearDropdown()">
+                            <input type="text" class="input-field " id="yearInput" placeholder="Eg. 2024" oninput="filterYearOptions()" onkeydown="handleYearKeyNavigation(event)">
+                            <button class="clear-btn" id="yearClearBtn" onclick="clearSelectedYearItems()">Clear All</button>
+                        </div>
+                    <div class="dropdown-options" id="yearDropdownOptions"></div>
                 </div>
+                </div>
+                
                 <!-- Gender -->
                 <div >
                     <h6 >Gender </h6>
@@ -173,13 +205,17 @@
 
                       <div class="d-flex gap-4 mt-4 ms-4 ">
                         <button type="button" class="btn btn-outline-primary">Clear</button>
-                        <button type="button" class="btn btn-primary">Show</button>
+                        <button type="button" class="btn btn-primary" id="show-btn">Show</button>
                       </div>
             
         </div>
     </div>
 
     <script src="index.js"></script>
+    <script  src="./filters//location.js"></script>
+    <script src="./filters//skill.js"></script>
+    <script src="./filters//background.js"></script>
+    <script src="./filters//graduation.js"></script>
    
 
 
